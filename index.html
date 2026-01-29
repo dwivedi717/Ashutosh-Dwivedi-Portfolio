@@ -18,7 +18,7 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #ffffff;
-            background: #141414;
+            background: #000000;
             min-height: 100vh;
             overflow-x: hidden;
         }
@@ -29,14 +29,14 @@
             padding: 20px;
         }
 
-        /* Header Section - Netflix Style */
+        /* Header Section - Pure Netflix Style */
         .header {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 1) 100%);
             backdrop-filter: blur(20px);
             border-radius: 0;
             padding: 80px 40px;
             margin-bottom: 0;
-            box-shadow: 0 4px 20px rgba(229, 9, 20, 0.3);
+            box-shadow: 0 4px 20px rgba(229, 9, 20, 0.4);
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -107,14 +107,6 @@
             animation: rotate 3s linear infinite;
         }
 
-        .profile-photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
-        }
-
         @keyframes rotate {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -175,14 +167,14 @@
             box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
         }
 
-        /* Section Styling - Netflix Style */
+        /* Section Styling - Pure Netflix Style */
         .section {
-            background: rgba(20, 20, 20, 0.95);
+            background: #000000;
             backdrop-filter: blur(15px);
             border-radius: 0;
             padding: 60px 40px;
             margin-bottom: 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
             transition: all 0.4s ease;
             border: none;
             border-left: 4px solid #e50914;
@@ -468,7 +460,7 @@
             font-size: 1.1rem;
             margin-bottom: 30px;
             text-align: center;
-            color: #e2e8f0;
+            color: #ffffff;
         }
 
         .about-highlights {
@@ -514,7 +506,7 @@
         }
 
         .highlight-content p {
-            color: #cbd5e1;
+            color: #ffffff;
             font-size: 0.95rem;
             line-height: 1.6;
         }
@@ -546,7 +538,7 @@
         }
 
         .stat-label {
-            color: #94a3b8;
+            color: #ffffff;
             font-size: 0.9rem;
             font-weight: 500;
         }
@@ -555,10 +547,10 @@
             text-align: center;
             margin-top: 25px;
             padding: 20px;
-            background: rgba(139, 92, 246, 0.1);
+            background: rgba(229, 9, 20, 0.1);
             border-radius: 15px;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-            color: #e2e8f0;
+            border: 1px solid rgba(229, 9, 20, 0.2);
+            color: #ffffff;
         }
 
         .about-recognition a {
@@ -568,17 +560,129 @@
 
         .about-recognition a:hover {
             text-decoration: underline;
-            color: #a78bfa;
+            color: #e50914;
         }
 
         .subtitle {
             font-size: 1.4rem;
-            color: #cccccc;
+            color: #ffffff;
             margin-bottom: 40px;
             font-weight: 400;
             font-style: italic;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
             letter-spacing: 0.5px;
+        }
+
+        /* Achievements Section */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-card {
+            background: rgba(229, 9, 20, 0.1);
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(229, 9, 20, 0.2);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            display: flex;
+            gap: 20px;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #e50914, #b20710, #e50914);
+            box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(229, 9, 20, 0.3);
+            background: rgba(229, 9, 20, 0.15);
+            border-color: rgba(229, 9, 20, 0.4);
+        }
+
+        .achievement-icon {
+            background: linear-gradient(135deg, #e50914, #b20710);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover .achievement-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 30px rgba(229, 9, 20, 0.6);
+        }
+
+        .achievement-content {
+            flex: 1;
+        }
+
+        .achievement-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .achievement-subtitle {
+            color: #e50914;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .achievement-description {
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .achievement-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .achievement-tag {
+            background: linear-gradient(135deg, #e50914, #b20710);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(229, 9, 20, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-tag:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+            background: linear-gradient(135deg, #ff1e2d, #e50914);
         }
 
         /* Contact Section */
@@ -592,7 +696,7 @@
 
         .contact-intro p {
             font-size: 1.1rem;
-            color: #cbd5e1;
+            color: #ffffff;
             line-height: 1.6;
         }
 
@@ -655,21 +759,21 @@
             color: #cbd5e1;
         }
 
-        /* Navigation Menu - Netflix Style */
+        /* Navigation Menu - Pure Netflix Style */
         .nav-menu {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: rgba(20, 20, 20, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(15px);
             border-radius: 8px;
             padding: 20px;
-            border: 1px solid rgba(229, 9, 20, 0.3);
+            border: 1px solid rgba(229, 9, 20, 0.5);
             z-index: 1000;
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
         }
 
         .nav-item {
@@ -787,12 +891,15 @@
         .section:nth-child(3) { animation-delay: 0.3s; }
         .section:nth-child(4) { animation-delay: 0.4s; }
         .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
     </style>
 </head>
 <body>
 <!-- Navigation Menu -->
 <nav class="nav-menu">
 <a class="nav-item" href="#about">About</a>
+<a class="nav-item" href="#achievements">Achievements</a>
 <a class="nav-item" href="#skills">Skills</a>
 <a class="nav-item" href="#experience">Experience</a>
 <a class="nav-item" href="#projects">Projects</a>
@@ -802,9 +909,7 @@
 <div class="container">
 <!-- Header Section -->
 <header class="header fade-in">
-        <div class="profile-img">
-            <img src="Linkedlin new pic.jpg" alt="Ashutosh Vinod Dwivedi" class="profile-photo" />
-        </div>
+<div class="profile-img">AD</div>
 <h1>Ashutosh Vinod Dwivedi</h1>
 <p class="title">Data Engineer &amp; Analytics Expert</p>
 <p class="subtitle">Transforming Complex Data into Strategic Business Intelligence</p>
@@ -823,7 +928,7 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 </div>
 <div class="highlight-content">
 <h4>Data Engineering Excellence</h4>
-<p>Specialized in building robust ETL/ELT pipelines, real-time streaming architectures, and cloud-native data platforms that process <strong>millions of records daily</strong> with 99.9% reliability.</p>
+<p>Specialized in building robust ETL/ELT pipelines, real-time streaming architectures, and cloud-native data platforms that process <strong>millions of records daily</strong> with 99.5% reliability.</p>
 </div>
 </div>
 <div class="highlight-item">
@@ -841,21 +946,21 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 </div>
 <div class="highlight-content">
 <h4>Innovation &amp; Impact</h4>
-<p>Delivered <strong>80-90% efficiency improvements</strong> across multiple projects, automated critical business processes, and enabled data-driven strategies that generate measurable ROI.</p>
+<p>Delivered <strong>60-80% efficiency improvements</strong> across multiple projects, automated critical business processes, and enabled data-driven strategies that generate measurable ROI.</p>
 </div>
 </div>
 </div>
 <div class="about-stats">
 <div class="stat-item">
-<div class="stat-number">500TB+</div>
+<div class="stat-number">50TB+</div>
 <div class="stat-label">Data Processed</div>
 </div>
 <div class="stat-item">
-<div class="stat-number">100M+</div>
-<div class="stat-label">Daily Transactions</div>
+<div class="stat-number">10M+</div>
+<div class="stat-label">Records Analyzed</div>
 </div>
 <div class="stat-item">
-<div class="stat-number">90%</div>
+<div class="stat-number">80%</div>
 <div class="stat-label">Efficiency Gains</div>
 </div>
 <div class="stat-item">
@@ -865,10 +970,124 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 </div>
 <p class="about-recognition">
 <i class="fas fa-star"></i> <strong>Featured in Northeastern University News:</strong>
-<a href="https://coe.northeastern.edu/news/information-systems-program-shaped-students-career-aspirations/" style="color: #60a5fa;" target="_blank">
+<a href="https://coe.northeastern.edu/news/information-systems-program-shaped-students-career-aspirations/" rel="noopener noreferrer" style="color: #e50914;" target="_blank">
 "Information Systems Program Shaped Student's Career Aspirations"
 </a>
 </p>
+</div>
+</section>
+<!-- Achievements Section -->
+<section class="section fade-in" id="achievements">
+<h2><i class="fas fa-trophy"></i> Key Achievements</h2>
+<div class="achievements-grid">
+<div class="achievement-card">
+<div class="achievement-icon">
+<i class="fas fa-users"></i>
+</div>
+<div class="achievement-content">
+<h3>Data Hackathon Organizer</h3>
+<p class="achievement-subtitle">Northeastern University</p>
+<p class="achievement-description">
+Successfully organized and managed a large-scale data hackathon with <strong>2000+ student participants</strong>, 
+coordinating logistics, mentorship, and technical infrastructure for one of the university's largest tech events.
+</p>
+<div class="achievement-tags">
+<span class="achievement-tag">Event Management</span>
+<span class="achievement-tag">Leadership</span>
+<span class="achievement-tag">2000+ Participants</span>
+</div>
+</div>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon">
+<i class="fas fa-medal"></i>
+</div>
+<div class="achievement-content">
+<h3>1st Prize Winner - Data Hackathon</h3>
+<p class="achievement-subtitle">Competitive Programming</p>
+<p class="achievement-description">
+Won <strong>1st place</strong> in a competitive data hackathon, demonstrating exceptional problem-solving skills, 
+data analysis expertise, and innovative solution development under time constraints.
+</p>
+<div class="achievement-tags">
+<span class="achievement-tag">1st Place</span>
+<span class="achievement-tag">Data Analysis</span>
+<span class="achievement-tag">Innovation</span>
+</div>
+</div>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon">
+<i class="fas fa-star"></i>
+</div>
+<div class="achievement-content">
+<h3>Featured in University News</h3>
+<p class="achievement-subtitle">Northeastern University Recognition</p>
+<p class="achievement-description">
+Featured in official Northeastern University news for outstanding academic performance and career achievements, 
+highlighting the impact of the Information Systems program on professional development.
+</p>
+<div class="achievement-tags">
+<span class="achievement-tag">Media Feature</span>
+<span class="achievement-tag">Academic Excellence</span>
+<span class="achievement-tag">University Recognition</span>
+</div>
+</div>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon">
+<i class="fas fa-graduation-cap"></i>
+</div>
+<div class="achievement-content">
+<h3>Graduate Student Ambassador</h3>
+<p class="achievement-subtitle">Northeastern University</p>
+<p class="achievement-description">
+Selected as Graduate Student Ambassador representing the Information Systems program, 
+mentoring prospective students and promoting academic excellence within the university community.
+</p>
+<div class="achievement-tags">
+<span class="achievement-tag">Leadership</span>
+<span class="achievement-tag">Mentorship</span>
+<span class="achievement-tag">Student Advocacy</span>
+</div>
+</div>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon">
+<i class="fas fa-award"></i>
+</div>
+<div class="achievement-content">
+<h3>Academic Excellence</h3>
+<p class="achievement-subtitle">Consistent High Performance</p>
+<p class="achievement-description">
+Maintained <strong>3.9 GPA</strong> in Master's program while working full-time co-op at Dell Technologies, 
+and earned <strong>Departmental Honors</strong> in undergraduate Computer Science program.
+</p>
+<div class="achievement-tags">
+<span class="achievement-tag">3.9 GPA</span>
+<span class="achievement-tag">Departmental Honors</span>
+<span class="achievement-tag">Academic Excellence</span>
+</div>
+</div>
+</div>
+<div class="achievement-card">
+<div class="achievement-icon">
+<i class="fas fa-building"></i>
+</div>
+<div class="achievement-content">
+<h3>Fortune 500 Experience</h3>
+<p class="achievement-subtitle">Dell Technologies</p>
+<p class="achievement-description">
+Successfully completed Data Engineer Co-op at Dell Technologies, delivering <strong>80% efficiency improvements</strong> 
+in critical business processes and automating enterprise-scale data pipelines.
+</p>
+<div class="achievement-tags">
+<span class="achievement-tag">Fortune 500</span>
+<span class="achievement-tag">Enterprise Scale</span>
+<span class="achievement-tag">80% Efficiency Gain</span>
+</div>
+</div>
+</div>
 </div>
 </section>
 <!-- Skills Section -->
@@ -1073,7 +1292,7 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 <span class="tech-tag">Kibana</span>
 </div>
 <ul class="achievements">
-<li>Designed real-time data streaming architecture processing 50K+ events/second with sub-second latency using Kafka and Spark Streaming</li>
+<li>Designed real-time data streaming architecture processing 5K+ events/second with sub-second latency using Kafka and Spark Streaming</li>
 <li>Implemented anomaly detection algorithms reducing false positives by 65% and enabling proactive system monitoring</li>
 <li>Built interactive dashboards in Kibana providing real-time insights to business stakeholders and reducing MTTR by 40%</li>
 </ul>
@@ -1090,7 +1309,7 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 <span class="tech-tag">dbt</span>
 </div>
 <ul class="achievements">
-<li>Architected multi-cloud data lake handling 500TB+ of structured and unstructured data with 99.9% availability</li>
+<li>Architected multi-cloud data lake handling 50TB+ of structured and unstructured data with 99.5% availability</li>
 <li>Implemented data versioning and time-travel capabilities using Delta Lake, reducing data recovery time by 80%</li>
 <li>Automated infrastructure deployment using Terraform, reducing provisioning time from days to hours</li>
 </ul>
@@ -1108,7 +1327,7 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 </div>
 <ul class="achievements">
 <li>Built comprehensive customer analytics platform integrating 15+ data sources, providing 360-degree customer view</li>
-<li>Developed predictive models for customer churn with 85% accuracy, enabling proactive retention strategies</li>
+<li>Developed predictive models for customer churn with 78% accuracy, enabling proactive retention strategies</li>
 <li>Created automated reporting system reducing manual analysis time by 70% and improving decision-making speed</li>
 </ul>
 </div>
@@ -1124,8 +1343,8 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 <span class="tech-tag">Time Series Analysis</span>
 </div>
 <ul class="achievements">
-<li>Engineered supply chain analytics platform processing 2M+ daily transactions with real-time inventory tracking</li>
-<li>Implemented demand forecasting models improving prediction accuracy by 45% and reducing stockouts by 30%</li>
+<li>Engineered supply chain analytics platform processing 500K+ daily transactions with real-time inventory tracking</li>
+<li>Implemented demand forecasting models improving prediction accuracy by 35% and reducing stockouts by 25%</li>
 <li>Built automated alerting system for supply chain disruptions, reducing response time from hours to minutes</li>
 </ul>
 </div>
@@ -1141,9 +1360,9 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 <span class="tech-tag">Monte Carlo</span>
 </div>
 <ul class="achievements">
-<li>Developed distributed risk calculation engine processing 100M+ financial transactions daily with 99.99% accuracy</li>
-<li>Implemented Monte Carlo simulations for portfolio risk assessment, improving risk prediction by 60%</li>
-<li>Built model versioning and deployment pipeline using MLflow, reducing model deployment time by 75%</li>
+<li>Developed distributed risk calculation engine processing 5M+ financial transactions daily with 99.5% accuracy</li>
+<li>Implemented Monte Carlo simulations for portfolio risk assessment, improving risk prediction by 40%</li>
+<li>Built model versioning and deployment pipeline using MLflow, reducing model deployment time by 60%</li>
 </ul>
 </div>
 </div>
@@ -1199,7 +1418,7 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 </div>
 <div class="contact-details">
 <h4>LinkedIn</h4>
-<a href="#" target="_blank">Connect with me</a>
+<a href="https://www.linkedin.com/in/dwivedi-ashutosh1997" target="_blank">Connect with me</a>
 </div>
 </div>
 <div class="contact-card">
@@ -1208,7 +1427,7 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
 </div>
 <div class="contact-details">
 <h4>GitHub</h4>
-<a href="#" target="_blank">View my code</a>
+<a href="https://github.com/dwivedi717" target="_blank">View my code</a>
 </div>
 </div>
 <div class="contact-card">
@@ -1330,20 +1549,20 @@ I'm a passionate <strong>Data Engineer and Analytics Expert</strong> with a prov
                         
                         // Simple counter animation
                         let current = 0;
-                        const increment = finalValue.includes('TB') ? 50 : 
+                        const increment = finalValue.includes('TB') ? 5 : 
                                         finalValue.includes('M') ? 1000000 : 
                                         finalValue.includes('%') ? 1 : 0.1;
                         const timer = setInterval(() => {
                             current += increment;
                             if (finalValue.includes('TB')) {
-                                target.textContent = Math.min(current, 500) + 'TB+';
-                                if (current >= 500) clearInterval(timer);
+                                target.textContent = Math.min(current, 50) + 'TB+';
+                                if (current >= 50) clearInterval(timer);
                             } else if (finalValue.includes('M')) {
-                                target.textContent = Math.min(current, 100000000) / 1000000 + 'M+';
-                                if (current >= 100000000) clearInterval(timer);
+                                target.textContent = Math.min(current, 10000000) / 1000000 + 'M+';
+                                if (current >= 10000000) clearInterval(timer);
                             } else if (finalValue.includes('%')) {
-                                target.textContent = Math.min(current, 90) + '%';
-                                if (current >= 90) clearInterval(timer);
+                                target.textContent = Math.min(current, 80) + '%';
+                                if (current >= 80) clearInterval(timer);
                             } else {
                                 target.textContent = Math.min(current, 3.9).toFixed(1);
                                 if (current >= 3.9) clearInterval(timer);
